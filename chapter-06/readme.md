@@ -1,58 +1,25 @@
-Chapter 6 : Props, State, and the Component Tree
-==================
-Data handling within component trees is one of the key advantages of working with React. There are techniques that you
-can use when working with data in React components that will make your life much easier in the long run.
+# Chapter 6 : React State Management
 
-Samples
---------
+State and properties have a relationship with each other. When we work with React applications, we gracefully compose components that are tied together based on this relationship. When the state of a component tree changes, so do the properties. The new data flows through the tree, causing specific leaves and branches to render to reflect the new content.
 
-### Property Validation and default Props
+## Samples
 
-#### Validation with `prop-types`
+### Star Rating
 
-  1. Incorrect properties do not always show errors (
-    [demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/01-property-validation-and-default-props/01-incorrect-props-no-error.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/01-property-validation-and-default-props/01-incorrect-props-no-error.html), [bin](http://jsbin.com/pozozi/1/edit?js,output))
-  2. Introducing `prop-types` npm ❌ (
-    [demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/01-property-validation-and-default-props/02-introducing-prop-types-npm.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/01-property-validation-and-default-props/02-introducing-prop-types-npm.html), [bin](http://jsbin.com/pozozi/2/edit?js,console,output))
-  3. PropTypes success (
-    [demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/01-property-validation-and-default-props/03-prop-types-success.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/01-property-validation-and-default-props/03-prop-types-success.html), [bin](http://jsbin.com/pozozi/3/edit?js,output))
-  4. cryptic problems when prop missing ❌ (
-    [demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/01-property-validation-and-default-props/04-cryptic-problems-when-prop-missing.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/01-property-validation-and-default-props/04-cryptic-problems-when-prop-missing.html), [bin](http://jsbin.com/pozozi/4/edit?js,console,output))
-  5. better errors with .isRequired ❌ (
-    [demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/01-property-validation-and-default-props/05-better-errors-with-is-required.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/01-property-validation-and-default-props/05-better-errors-with-is-required.html), [bin](http://jsbin.com/pozozi/5/edit?js,console,output))
-  6. catching validation errors ❌ (
-    [demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/01-property-validation-and-default-props/06-successful-validation.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/01-property-validation-and-default-props/06-successful-validation.html), [bin](http://jsbin.com/pozozi/6/edit?js,output))
-  7. default properties (
-    [demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/01-property-validation-and-default-props/07-default-properties.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/01-property-validation-and-default-props/07-default-properties.html), [bin](http://jsbin.com/pozozi/7/edit?js,output))
-  8. custom validation ❌ (
-    [demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/01-property-validation-and-default-props/08-custom-validation.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/01-property-validation-and-default-props/08-custom-validation.html), [bin](http://jsbin.com/pozozi/8/edit?js,console,output))
-  9. stateless prop validation ❌ (
-    [demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/01-property-validation-and-default-props/09-stateless-prop-validation.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/01-property-validation-and-default-props/09-stateless-prop-validation.html), [bin](http://jsbin.com/pozozi/9/edit?js,output))  
-  10. stateless default props (
-    [demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/01-property-validation-and-default-props/10-stateless-default-props.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/01-property-validation-and-default-props/10-stateless-default-props.html), [bin](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/01-property-validation-and-default-props/http://jsbin.com/pozozi/10/edit?js,output))  
+- Five Stars Rendered - ([run it](https://codesandbox.io/s/learning-react-star-rating-1-h7byq?file=/src/StarRating.js))
+- Star Component with Props - ([run it](https://codesandbox.io/s/learning-react-star-rating-2-zbkuu?file=/src/App.js))
+- Star Component with State - ([run it](https://codesandbox.io/s/learning-react-star-rating-3-tpmr9?file=/src/StarRating.js))
+- Completed Star Component - ([run it](https://codesandbox.io/s/learning-react-star-rating-4-gxvb5?file=/src/Star.js))
+- Advanced Star Component - ([run it](https://codesandbox.io/s/learning-react-star-rating-5-86ngm?file=/src/StarRating.js))
 
-### Refs
+### Color Organizer
 
-  1. Color component ([demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/02-refs/01-color-component-before-refs.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/02-refs/01-color-component-before-refs.html), [bin](http://jsbin.com/funeyol/1/edit?js,output))
-  2. Color component with refs ([demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/02-refs/02-color-component-with-refs.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/02-refs/02-color-component-with-refs.html), [bin](http://jsbin.com/funeyol/2/edit?js,output))
-  3. Two way data binding ([demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/02-refs/03-Color-Component-binding.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/02-refs/03-Color-Component-binding.html), [bin](http://jsbin.com/funeyol/3/edit?js,console,output))
-  4. Two way data todo note ([demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/02-refs/04-two-way-data-todo.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/02-refs/04-two-way-data-todo.html), [bin](http://jsbin.com/funeyol/4/edit?js,console,output))
-  5. without a default function prop ❌ ([demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/02-refs/05-without-default-function.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/02-refs/05-without-default-function.html), [bin](http://jsbin.com/funeyol/5/edit?js,console,output))
-  6. checking for the function property ([demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/02-refs/06-check-for-property.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/02-refs/06-check-for-property.html), [bin](http://jsbin.com/funeyol/6/edit?js,console,output))
-  7. using a default function property ([demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/02-refs/07-default-property.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/02-refs/07-default-property.html), [bin](http://jsbin.com/funeyol/7/edit?js,console,output))
-  8. stateless default function property ([demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/02-refs/08-stateless-default-prop.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/02-refs/08-stateless-default-prop.html), [bin](http://jsbin.com/funeyol/8/edit?js,console,output))
-  9. stateless default argument function property ([demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/02-refs/09-stateless-default-arg.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/02-refs/09-stateless-default-arg.html), [bin](http://jsbin.com/funeyol/9/edit?js,console,output))
-
-### Component State
-
-  1. The Star Component (
-    [demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/03-component-state/01-the-star-component.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/03-component-state/01-the-star-component.html), [bin](http://jsbin.com/budanem/1/edit?js,output))
-  2. The Star Rating Component Class (
-    [demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/03-component-state/02-the-star-rating-component.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/03-component-state/02-the-star-rating-component.html), [bin](http://jsbin.com/budanem/2/edit?js,output))
-  3. Setting State From Props (
-    [demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/03-component-state/03-setting-state-from-props.html), [code](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/03-component-state/03-setting-state-from-props.html), [bin](http://jsbin.com/budanem/3/edit?js,output))
-
-### State within the Component Tree
-
-1. Color Organizer App ([demo](https://rawgit.com/MoonHighway/learning-react/master/chapter-06/color-organizer/dist/index.html),
-[source](https://github.com/MoonHighway/learning-react/blob/master/chapter-06/color-organizer))
+- Feature: Display Color Data - ([run it](https://codesandbox.io/s/learning-react-color-organizer-1-5r8tr?file=/src/App.js))
+- Features: Remove Color, Rate Color - ([run it](https://codesandbox.io/s/learning-react-color-organizer-2-iytxb?file=/src/App.js))
+- Feature: Add Color Component with Refs - ([run it](https://codesandbox.io/s/learning-react-color-organizer-3-kkyn0?file=/src/AddColorForm.js))
+- Refactor: Add Color Controlled Component - ([run it](https://codesandbox.io/s/learning-react-color-organizer-4-sudge?file=/src/AddColorForm.js))
+- Refactor: `useInput` hook - ([run it](https://codesandbox.io/s/learning-react-color-organizer-5-umj5q?file=/src/hooks.js))
+- Feature: Adding a Color to State - ([run it](https://codesandbox.io/s/learning-react-color-organizer-6-ewxpp?file=/src/App.js))
+- Refactor: Colors In Context - ([run it](https://codesandbox.io/s/learning-react-color-organizer-7-lg9y3?file=/src/index.js))
+- Refactor: `useColors` hook - ([run it](https://codesandbox.io/s/learning-react-color-organizer-8-jqchd?file=/src/ColorProvider.js))
+- BONUS: Color Organizer App (with emotion css)- ([run it](https://codesandbox.io/s/learning-react-color-organizer-9-ypf8r?file=/src/ColorList.js))
