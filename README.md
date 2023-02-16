@@ -1,4 +1,6 @@
 # Learn React 
+বইয়ের চ্যাপ্টার অনুযায়ি এখানে রিপোজিটরি রাখা আছে। যখন যে চ্যাপ্টার লাগবে সেটা ক্লোন করে নেবেন।
+রিপোজিটোরি ক্লোন করতে টারমিনালে লেখুন - git clone https://github.com/faysal725/learning-react-2.git 
 
 ### Table of Contents
 
